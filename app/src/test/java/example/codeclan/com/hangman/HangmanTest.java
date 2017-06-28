@@ -26,28 +26,27 @@ public class HangmanTest {
 
     @Test
     public void testStoreLetters(){
-        player.addGuess('g');
-        player.addGuess('h');
+        player.addGuess2('g');
+        player.addGuess2('h');
         assertEquals(2, player.getGuesses().size());
 
     }
 
     @Test
     public void testConvertGuessedLetter() {
-        player.addGuess('h');
+        player.addGuess2('h');
         assertEquals("h______", answerword.guessLetter(player.getGuesses()));
     }
 
     @Test
     public void testConvertSomeGuessedLetters() {
-        player.addGuess('h');
-        player.addGuess('g');
-        player.addGuess2('p', answerword.getAnswer());
-        player.addGuess('n');
-        player.addGuess('m');
+        player.addGuess2('h');
+        player.addGuess2('n');
+        player.addGuess2('g');
+        player.addGuess2('m');
+        player.addGuess2('p');
         assertEquals(5, player.getLives());
         assertEquals("h_ngm_n", answerword.guessLetter(player.getGuesses()));
-        assertEquals(false, answerword.wordComplete(player.getGuesses()));
     }
 
 

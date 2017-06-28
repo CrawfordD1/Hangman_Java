@@ -8,12 +8,9 @@ public class Runner {
 
 
     public static void main(String[] args) {
-
         HangmanLogic game = new HangmanLogic();
-
         LetterPicker letterplayer = new LetterPicker();
         WordChooser wordplayer = new WordChooser();
-
         AnswerWord answer = game.pickAnswerWord(wordplayer);
          answer.makeSpace();
         System.out.println("The word is " + answer.getAnswer().length() + " letters long:");
@@ -22,4 +19,5 @@ public class Runner {
 
     }
 }
+
 

@@ -19,7 +19,7 @@ public class WordChooser extends Player {
         System.out.println("Please pick a single word!");
         String input = sc.nextLine().toUpperCase();
         while(!input.matches("[a-zA-Z]+")){
-            System.out.println("Please enter a valid character");
+            System.out.println("Please enter a valid word (Letters only!)");
             input = sc.nextLine();
         }
         return input;
