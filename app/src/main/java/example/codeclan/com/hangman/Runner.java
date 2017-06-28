@@ -8,6 +8,7 @@ public class Runner {
 
 
     public static void main(String[] args) {
+        Display display = new Display();
         HangmanLogic game = new HangmanLogic();
         LetterPicker letterplayer = new LetterPicker();
         WordChooser wordplayer = new WordChooser();
@@ -15,7 +16,7 @@ public class Runner {
          answer.makeSpace();
         System.out.println("The word is " + answer.getAnswer().length() + " letters long:");
         System.out.println(answer.convertAnswer());
-        game.playGame(answer, letterplayer);
+        game.playGame(answer, letterplayer, display);
 
     }
 }

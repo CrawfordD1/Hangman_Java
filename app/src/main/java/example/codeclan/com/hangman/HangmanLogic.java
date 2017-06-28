@@ -6,13 +6,15 @@ package example.codeclan.com.hangman;
 
 public class HangmanLogic {
 
-    public void playGame(AnswerWord answer, LetterPicker letterplayer) {
+    public void playGame(AnswerWord answer, LetterPicker letterplayer, Display display) {
 
     boolean gameisFinished = !answer.wordComplete(answer.guessLetter(letterplayer.getGuesses()));
 
         while (letterplayer.getLives() > 0 && !gameisFinished) {
             letterplayer.pickLetter(answer);
+            display.Display(letterplayer.getLives());
             System.out.println(answer.guessLetter(letterplayer.getGuesses()));
+
 
         if (letterplayer.getLives() == 0) {
             System.out.println("Out of lives!");
@@ -39,4 +41,7 @@ public class HangmanLogic {
     public boolean checkNotBlank(String input){
         return (input.length() != 0);
     }
+
+
 }
+
